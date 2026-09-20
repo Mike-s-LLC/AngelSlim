@@ -28,10 +28,27 @@ jobs:
           git config --global user.email "action@github.com"
           
           git remote add upstream https://github.com/$UPSTREAM_OWNER/$UPSTREAM_PROJECT.git
-          git fetch upstream '--prune'
+          git fetch upstream '--prune --tags'
           git push origin 'refs/remotes/upstream/*:refs/heads/*' --force   
           
           # Push to Private Repo             
           # Format: https://username:token@domain.com/path/to/repo.git
           PRIV_REPO_URL="https://${{ secrets.PRIV_REPO_USER }}:${{ secrets.PRIV_REPO_TOKEN }}@${{ secrets.PRIV_REPO_ADDR }}/${{ secrets.PRIV_REPO_USER }}/$UPSTREAM_PROJECT.git"
-          git push $PRIV_REPO_URL --branches --tags 
+          git push $PRIV_REPO_URL --branches 
+          git push $PRIV_REPO_URL --tags
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
