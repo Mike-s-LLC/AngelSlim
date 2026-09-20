@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  UPSTREAM_REPO: "HadesVR/HadesVR"
+  UPSTREAM_REPO: "Tencent/AngelSlim"
 
 jobs:
   sync-and-push:
